@@ -16,7 +16,7 @@ install:
 - yarn global add codecov
 - yarn
 script:
-- yarn run test && codecov
+- yarn run test && yarn run test:typescript && codecov
 after_success:
 - if [ "$TRAVIS_PULL_REQUEST" != "false" -o "$TRAVIS_BRANCH" != "master" ]; then exit
   0; fi
